@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Approvers" max_length="40" name="x_58872_needit_approvers" type="collection">
+        <element label="Approver" mandatory="true" max_length="32" name="u_approver" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Request Type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resource" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Faclities" sequence="1" value="faclities"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="u_approver"/>
+        </index>
+    </element>
+</database>
